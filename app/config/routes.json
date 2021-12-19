@@ -1,0 +1,25 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "routeType": "page",
+      "layout": "main"
+    },
+    {
+      "path": "/cars_list",
+      "page": "cars_list",
+      "layout": "main"
+    },
+    {
+      "path": "/components",
+      "page": "components",
+      "layout": "main"
+    },
+    {
+      "path": "/Storages",
+      "page": "Storages",
+      "layout": "main"
+    }
+  ]
+}

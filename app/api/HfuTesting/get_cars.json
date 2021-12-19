@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "sort"
+      },
+      {
+        "type": "text",
+        "name": "dir"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "cars",
+      "module": "dbconnector",
+      "action": "select",
+      "options": {
+        "sql": {
+          "type": "SELECT",
+          "columns": [
+            {
+              "table": "cars",
+              "column": "id"
+            },
+            {
+              "table": "cars",
+              "column": "make"
+            },
+            {
+              "table": "cars",
+              "column": "model"
+            },
+            {
+              "table": "cars",
+              "column": "year"
+            }
+          ],
+          "table": {
+            "name": "cars"
+          },
+          "joins": [],
+          "query": "SELECT id, make, model, year\nFROM cars",
+          "params": []
+        },
+        "connection": "db"
+      },
+      "meta": [
+        {
+          "type": "number",
+          "name": "id"
+        },
+        {
+          "type": "text",
+          "name": "make"
+        },
+        {
+          "type": "text",
+          "name": "model"
+        },
+        {
+          "type": "text",
+          "name": "year"
+        }
+      ],
+      "outputType": "array",
+      "output": true
+    }
+  }
+}

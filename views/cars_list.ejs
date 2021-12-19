@@ -1,0 +1,50 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="cars_list" appconnect="local" components="{dmxBootstrap5TableGenerator:{},dmxDataTraversal:{},dmxStateManagement:{},dmxBootstrap5Modal:{},dmxFormatter:{}}" style="cursor: pointer;" class="selected" -->
+<dmx-session-manager id="session1"></dmx-session-manager>
+<div class="modal" id="modal1" is="dmx-bs5-modal" tabindex="-1">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form is="dmx-serverconnect-form" id="serverconnectform1" method="post" action="api/HfuTesting/add_car" dmx-generator="bootstrap5" dmx-form-type="horizontal">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<dmx-serverconnect id="serverconnect1" url="api/HfuTesting/get_cars" dmx-param:sort="query.sort" dmx-param:dir="query.dir"></dmx-serverconnect>
+<dmx-query-manager id="query1"></dmx-query-manager>
+<div class="border rounded container-sm">
+    <div class="row">
+        <div class="border col">
+            <h1 class="text-primary" id="Heading_1">Demoliste biler</h1>
+        </div>
+    </div>
+</div>
+<div class="container-sm" is="dmx-data-detail" id="iterator1">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th class="sorting" dmx-on:click="query1.set('sort','id');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='id' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='id' && query1.data.dir == 'desc'">Id</th>
+                <th class="sorting" dmx-on:click="query1.set('sort','make');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='make' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='make' && query1.data.dir == 'desc'">Make</th>
+                <th class="sorting" dmx-on:click="query1.set('sort','model');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='model' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='model' && query1.data.dir == 'desc'">Model</th>
+                <th class="sorting" dmx-on:click="query1.set('sort','year');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='year' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='year' && query1.data.dir == 'desc'">Year</th>
+            </tr>
+        </thead>
+        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect1.data.cars" id="tableRepeat2" dmx-state="query1" dmx-sort="sort" dmx-order="dir">
+            <tr style="cursor: pointer;" dmx-on:click="session1.set('selected_car_id',id)" dmx-class:selected="(id == session1.data.selected_car_id)">
+                <td dmx-text="id"></td>
+                <td dmx-text="make"></td>
+                <td dmx-text="id"></td>
+                <td dmx-text="year"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<meta name="ac:route" content="/cars_list">

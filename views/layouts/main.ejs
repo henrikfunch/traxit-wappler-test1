@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+    <base href="/">
+    <script src="dmxAppConnect/dmxAppConnect.js"></script>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="bootstrap/5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="dmxAppConnect/dmxBootstrap5TableGenerator/dmxBootstrap5TableGenerator.css" />
+    <script src="dmxAppConnect/dmxDataTraversal/dmxDataTraversal.js" defer=""></script>
+    <script src="dmxAppConnect/dmxRouting/dmxRouting.js" defer=""></script>
+    <script src="dmxAppConnect/dmxBootstrap5Navigation/dmxBootstrap5Navigation.js" defer=""></script>
+    <script src="dmxAppConnect/dmxBootstrap5Modal/dmxBootstrap5Modal.js" defer=""></script>
+    <script src="dmxAppConnect/dmxStateManagement/dmxStateManagement.js" defer=""></script>
+    <script src="dmxAppConnect/dmxFormatter/dmxFormatter.js" defer=""></script>
+</head>
+
+<body is="dmx-app" id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col border">
+                <h1>TraxIT for fun</h1>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+                    <div class="container-fluid" id="navbar1">
+                        <a class="navbar-brand" href="#">
+                            <img src="http://hfabc.dk/ssc/Podio-zoo/Hfulogo.gif">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-controls="collapse1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div id="collapse1" class="collapse navbar-collapse">
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link active" href="../../../../../">File</a>
+                                <a class="nav-item nav-link active" href="cars_list">Link1</a>
+                                <a class="nav-item nav-link active" href="components">Link2</a>
+                                <div class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#" id="dropdown1" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdown1">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <dmx-query-manager id="query1"></dmx-query-manager>
+    <div is="dmx-view" id="content">
+        <%- await include(content, locals); %>
+    </div>
+    <script src="bootstrap/5/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

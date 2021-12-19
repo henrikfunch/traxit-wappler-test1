@@ -1,0 +1,80 @@
+{
+  "direct": true,
+  "type": "mysql",
+  "connection": {
+    "host": "localhost",
+    "port": 9906,
+    "user": "root",
+    "password": "eefTmWJE",
+    "database": "traxit"
+  },
+  "schema": {
+    "tables": {
+      "images": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "traxit",
+          "collation": "utf8_general_ci"
+        }
+      },
+      "users": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "traxit",
+          "collation": "utf8_general_ci"
+        }
+      },
+      "countries": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "traxit",
+          "collation": "utf8_general_ci"
+        }
+      },
+      "cars": {
+        "db": {
+          "engine": "InnoDB",
+          "schema": "traxit",
+          "collation": "utf8_general_ci"
+        },
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "nullable": false
+            }
+          },
+          "make": {
+            "db": {
+              "type": "string",
+              "default": "'NULL'",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "model": {
+            "db": {
+              "type": "string",
+              "default": "'NULL'",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          },
+          "year": {
+            "db": {
+              "type": "string",
+              "default": "'NULL'",
+              "maxLength": 50,
+              "primary": false,
+              "nullable": true
+            }
+          }
+        }
+      }
+    },
+    "views": {}
+  }
+}

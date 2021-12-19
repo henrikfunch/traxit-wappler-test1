@@ -1,0 +1,55 @@
+{
+  "projectName": "Traxit",
+  "styleFile": "/css/style.css",
+  "assetsFolder": "/assets",
+  "designFramework": "bootstrap5",
+  "frameworks": [
+    {
+      "name": "fontawesome_5",
+      "type": "cdn"
+    },
+    {
+      "name": "bootstrap5",
+      "type": "local"
+    },
+    {
+      "name": "appConnect",
+      "type": "local"
+    }
+  ],
+  "hostingType": "docker",
+  "projectServerModel": "node",
+  "webRootFolder": "/public",
+  "useRouting": true,
+  "addBase": true,
+  "routingHandler": "node",
+  "targets": [
+    {
+      "name": "Development-lokal",
+      "remoteURL": "http://localhost:8100",
+      "webServerPort": 8100,
+      "webServerLang": "node",
+      "targetType": "docker",
+      "webServer": "node",
+      "NodeVersion": "12",
+      "databaseType": "mariadb",
+      "databasePort": 9906,
+      "mariaDBVersion": "10.4.x",
+      "mariaDB_rootPassword": "eefTmWJE",
+      "mariaDB_databaseName": "traxit",
+      "mariaDB_username": "db_user",
+      "mariaDB_password": "w4kehb9J",
+      "dockerTimezone": "Europe/Amsterdam",
+      "webLoggingMaxFiles": 5,
+      "webLoggingMaxFileSize": "10m",
+      "databaseLoggingMaxFiles": 5,
+      "databaseLoggingMaxFileSize": "10m",
+      "NodeOS": "buster",
+      "NodeImageType": "slim",
+      "dockerProjectName": "wapplertraxit__development"
+    }
+  ],
+  "activeTarget": "Development-lokal",
+  "projectType": "web",
+  "npmInstall": true
+}

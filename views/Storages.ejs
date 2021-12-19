@@ -1,0 +1,42 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="Storages" appConnect="local" components="{dmxStateManagement:{}}" -->
+<div class="container">
+    <form id="login1">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-7 col-xl-5 text-start">
+                <div class="row">
+                    <div class="col">
+                        <h1>Log In</h1>
+                        <p class="text-h3">Enter your details below.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mt-4">
+                        <input type="text" id="inp_email" name="email" class="form-control" placeholder="Email" dmx-bind:value="cookies1.data.email">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <input type="password" id="inp_password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <button id="login1_submit" class="btn" type="button">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<meta name="ac:route" content="/Storages">
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <button id="btn1" class="btn" dmx-on:click="local1.set('email','lokal@email.com');session1.set('email','session@email.com');cookies1.set('email','cokkies@email.com',{expires: 2})">Set storages values</button>
+        </div>
+    </div>
+</div>
+<dmx-local-manager id="local1"></dmx-local-manager>
+<dmx-session-manager id="session1"></dmx-session-manager>
+<dmx-cookie-manager id="cookies1"></dmx-cookie-manager>
+<!-- New Wappler Page -->

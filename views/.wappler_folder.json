@@ -1,0 +1,14 @@
+{
+  "cars_list.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "components.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "Storages.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  }
+}
