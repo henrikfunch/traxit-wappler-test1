@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Input økonomi data&nbsp;</h1>
+            <h1>Input relation entreprise&nbsp;&nbsp;</h1>
         </div>
     </div>
 </div>
@@ -13,16 +13,25 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Funktion</th>
+                        <th scope="col">Firma</th>
                         <th scope="col">Handle</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
+                        <td>
+                            <div class="dropdown">
+                                <button id="dropdown1" class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vælg funktion&nbsp; &nbsp;</button>
+                                <div class="dropdown-menu" aria-labelledby="dropdown1">
+                                    <a class="dropdown-item" href="#">Entreprenør</a>
+                                    <a class="dropdown-item" href="#">Bygherre</a>
+                                    <a class="dropdown-item" href="#">Konto</a>
+                                </div>
+                            </div>
+                        </td>
                         <td>Otto</td>
                         <td>@mdo</td>
                     </tr>
