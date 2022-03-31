@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "path": "/Entreprises",
+      "url": "",
+      "routeType": "page",
+      "page": "Entreprises",
+      "layout": "main"
+    },
+    {
       "path": "/",
       "page": "index",
       "routeType": "page",

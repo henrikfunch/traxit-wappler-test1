@@ -10,5 +10,9 @@
   "Storages.ejs": {
     "layoutPage": "main",
     "description": ""
+  },
+  "Entreprises.ejs": {
+    "layoutPage": "main",
+    "description": ""
   }
 }
