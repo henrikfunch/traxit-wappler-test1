@@ -10,6 +10,10 @@
       "user": "db_user",
       "password": "w4kehb9J",
       "database": "traxit"
-    }
-  }
+    },
+    "meta": {}
+  },
+  "actionFilePath": "file:///Users/henrikfunch/WapplerTraxit/app/modules/connections/db.json",
+  "serverType": "node",
+  "fileName": "db.json"
 }

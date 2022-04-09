@@ -16,7 +16,8 @@
     {
       "path": "/cars_list",
       "page": "cars_list",
-      "layout": "main"
+      "layout": "main",
+      "exec": "/api/HfuTesting/get_cars"
     },
     {
       "path": "/components",

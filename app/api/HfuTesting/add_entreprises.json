@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "ID"
+      },
+      {
+        "type": "text",
+        "name": "Navn"
+      },
+      {
+        "type": "text",
+        "name": "Funktion"
+      },
+      {
+        "type": "text",
+        "name": "mail"
+      },
+      {
+        "type": "text",
+        "name": "adresse"
+      },
+      {
+        "type": "text",
+        "name": "navn"
+      },
+      {
+        "type": "text",
+        "name": "funktion"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "insert_entreprises",
+      "module": "dbupdater",
+      "action": "insert",
+      "options": {
+        "connection": "db",
+        "sql": {
+          "type": "insert",
+          "values": [
+            {
+              "table": "entreprises",
+              "column": "navn",
+              "type": "text",
+              "value": "{{$_POST.navn}}"
+            },
+            {
+              "table": "entreprises",
+              "column": "funktion",
+              "type": "text",
+              "value": "{{$_POST.funktion}}"
+            },
+            {
+              "table": "entreprises",
+              "column": "mail",
+              "type": "text",
+              "value": "{{$_POST.mail}}"
+            },
+            {
+              "table": "entreprises",
+              "column": "adresse",
+              "type": "text",
+              "value": "{{$_POST.adresse}}"
+            }
+          ],
+          "table": "entreprises",
+          "returning": "id",
+          "query": "INSERT INTO entreprises\n(navn, funktion, mail, adresse) VALUES (:P1 /* {{$_POST.navn}} */, :P2 /* {{$_POST.funktion}} */, :P3 /* {{$_POST.mail}} */, :P4 /* {{$_POST.adresse}} */)",
+          "params": [
+            {
+              "name": ":P1",
+              "type": "expression",
+              "value": "{{$_POST.navn}}"
+            },
+            {
+              "name": ":P2",
+              "type": "expression",
+              "value": "{{$_POST.funktion}}"
+            },
+            {
+              "name": ":P3",
+              "type": "expression",
+              "value": "{{$_POST.mail}}"
+            },
+            {
+              "name": ":P4",
+              "type": "expression",
+              "value": "{{$_POST.adresse}}"
+            }
+          ]
+        }
+      },
+      "meta": [
+        {
+          "name": "identity",
+          "type": "text"
+        },
+        {
+          "name": "affected",
+          "type": "number"
+        }
+      ]
+    }
+  }
+}

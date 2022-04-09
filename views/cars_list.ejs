@@ -19,7 +19,7 @@
     </div>
 </div>
 <dmx-serverconnect id="serverconnect1" url="api/HfuTesting/get_cars" dmx-param:sort="query.sort" dmx-param:dir="query.dir"></dmx-serverconnect>
-<dmx-query-manager id="query1"></dmx-query-manager>
+<dmx-query-manager id="queryGetCars"></dmx-query-manager>
 <div class="border rounded container-sm">
     <div class="row">
         <div class="border col">
@@ -33,11 +33,11 @@
             <tr>
                 <th class="sorting" dmx-on:click="query1.set('sort','id');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='id' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='id' && query1.data.dir == 'desc'">Id</th>
                 <th class="sorting" dmx-on:click="query1.set('sort','make');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='make' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='make' && query1.data.dir == 'desc'">Make</th>
-                <th class="sorting" dmx-on:click="query1.set('sort','model');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='model' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='model' && query1.data.dir == 'desc'">Model</th>
+                <th class="sorting w-auto" dmx-on:click="query1.set('sort','model');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='model' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='model' && query1.data.dir == 'desc'">Model</th>
                 <th class="sorting" dmx-on:click="query1.set('sort','year');query1.set('dir',query1.data.dir == 'desc' ? 'asc' : 'desc')" dmx-class:sorting_asc="query1.data.sort=='year' && query1.data.dir == 'asc'" dmx-class:sorting_desc="query1.data.sort=='year' && query1.data.dir == 'desc'">Year</th>
             </tr>
         </thead>
-        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect1.data.cars" id="tableRepeat2" dmx-state="query1" dmx-sort="sort" dmx-order="dir">
+        <tbody is="dmx-repeat" dmx-generator="bs5table" dmx-bind:repeat="serverconnect1.data.cars" id="tableRepeat_cars" dmx-state="query1" dmx-sort="sort" dmx-order="dir">
             <tr style="cursor: pointer;" dmx-on:click="session1.set('selected_car_id',id)" dmx-class:selected="(id == session1.data.selected_car_id)">
                 <td dmx-text="id"></td>
                 <td dmx-text="make"></td>

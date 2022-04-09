@@ -1,54 +1,55 @@
-<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="Eco_input_page" appConnect="local" -->
-<meta name="ac:route" content="/Eco_input_page">
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="local" is="dmx-app" id="entreprises" appconnect="local" components="{dmxStateManagement:{},dmxFormatter:{}}" -->
+<dmx-query-manager id="query_entreprises"></dmx-query-manager>
+<dmx-serverconnect id="get_entreprises" url="api/HfuTesting/get_entreprises"></dmx-serverconnect>
+<dmx-session-manager id="session_entreprises"></dmx-session-manager>
+<meta name="ac:route" content="/Entreprises">
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>Input relation entreprise&nbsp;&nbsp;</h1>
+            <h1>Tabel relation entreprise&nbsp;&nbsp;</h1>
         </div>
+        <div class="col"></div>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Funktion</th>
-                        <th scope="col">Firma</th>
-                        <th scope="col">Handle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>
-                            <div class="dropdown">
-                                <button id="dropdown1" class="btn btn-secondary dropdown-toggle btn-sm" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Vælg funktion&nbsp; &nbsp;</button>
-                                <div class="dropdown-menu" aria-labelledby="dropdown1">
-                                    <a class="dropdown-item" href="#">Entreprenør</a>
-                                    <a class="dropdown-item" href="#">Bygherre</a>
-                                    <a class="dropdown-item" href="#">Konto</a>
-                                </div>
-                            </div>
-                        </td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive" id="table_entreprises">
+                <table class="table table-striped table-sm" id="Relation_entreprise">
+                    <thead>
+                        <tr class="table-success">
+                            <th scope="col">ID</th>
+                            <th scope="col">Navn</th>
+                            <th scope="col" class="w-auto">Funktion</th>
+                            <th scope="col">Mail</th>
+                            <th scope="col">Adresse</th>
+                        </tr>
+                    </thead>
+                    <tbody is="dmx-repeat" id="get_entreprises" dmx-bind:repeat="get_entreprises.data">
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                            <td>@twitter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
